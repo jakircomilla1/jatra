@@ -13,9 +13,9 @@
 * (C) 2014 Travelport, Inc. 
 * This code is for illustration purposes only. 
 */
-$TARGETBRANCH = 'Enter the Target Branch that you received in your Welcome letter';
-$CREDENTIALS = 'Universal API/API1234567:Password provieded in the welcome leter';
-$Provider = 'ACH'; // Any provider you want to use like 1G/1P/1V/ACH
+$TARGETBRANCH = 'P7039096';
+$CREDENTIALS = 'Universal API/uAPI8383229630-d0cbb10:AwfAtd5T5S6nCD2HjA6K7Fd9d';
+$Provider = '1G'; // Any provider you want to use like 1G/1P/1V/ACH
 
 $message = <<<EOM
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -47,7 +47,7 @@ $file = "001-".$Provider."_AirAvailabilityReq.xml"; // file name to save the req
 prettyPrint($message,$file);//call function to pretty print xml
 
 $auth = base64_encode("$CREDENTIALS"); 
-$soap_do = curl_init ("https://americas.universal-api.pp.travelport.com/B2BGateway/connect/uAPI/AirService");
+$soap_do = curl_init ("https://apac.universal-api.pp.travelport.com/B2BGateway/connect/uAPI/");
 $header = array(
 "Content-Type: text/xml;charset=UTF-8", 
 "Accept: gzip,deflate", 
